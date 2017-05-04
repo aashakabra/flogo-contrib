@@ -11,7 +11,7 @@
       "name": "fileName",
       "type": "string",
       "required": true
-    },
+    }
   ],
   "outputs": [
     {
