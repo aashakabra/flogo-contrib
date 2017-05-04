@@ -1,0 +1,20 @@
+{
+  "name": "pankaj",
+  "version": "0.0.1",
+  "type": "flogo:filecreate",
+  "description": "Pankaj - File create",
+  "author": "Pankaj Patil <papatil@tibco.com>",
+  "inputs":[
+    {
+      "name": "fileName",
+      "type": "string",
+	  "required":"true"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "created",
+      "type": "boolean"
+    }
+  ]
+}
