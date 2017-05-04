@@ -1,0 +1,22 @@
+{
+  "name": "asha-filecreate",
+  "type": "flogo:activity",
+  "ref": "github.com/aashakabra/flogo-contrib/activity/log",
+  "version": "0.0.1",
+  "title": "Trial : Create File",
+  "description": "Trial : Create File",
+  "homepage": "https://github.com/aashakabra/flogo-contrib/tree/master/activity/filecreate",
+  "inputs":[
+    {
+      "name": "fileName",
+      "type": "string",
+      "required": true
+    },
+  ],
+  "outputs": [
+    {
+      "name": "created",
+      "type": "boolean"
+    }
+  ]
+}
