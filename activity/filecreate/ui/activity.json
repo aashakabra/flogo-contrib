@@ -1,32 +1,22 @@
 {
-  "name": "tibco-log",
+  "name": "asha-filecreate",
   "type": "flogo:activity",
-  "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+  "ref": "github.com/TIBCOSoftware/flogo-contrib/activity/filecreate",
   "version": "0.0.1",
-  "title": "Log Message",
-  "description": "Simple Log Activity",
-  "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/log",
+  "title": "Trial: File Create",
+  "description": "Trial: File Create",
+  "homepage": "https://github.com/TIBCOSoftware/flogo-contrib/tree/master/activity/filecreate",
   "inputs":[
     {
-      "name": "message",
+      "name": "fileName",
       "type": "string",
-      "value": ""
-    },
-    {
-      "name": "flowInfo",
-      "type": "boolean",
-      "value": "true"
-    },
-    {
-      "name": "addToFlow",
-      "type": "boolean",
-      "value": "true"
-    }
+      "required": true
+    }    
   ],
   "outputs": [
     {
-      "name": "message",
-      "type": "string"
+      "name": "created",
+      "type": "boolean"
     }
   ]
 }
