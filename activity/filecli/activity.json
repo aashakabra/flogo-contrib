@@ -1,0 +1,20 @@
+{
+  "name": "filecli",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "Through cli - fileCreate",
+  "author": "Asha <akabra@tibco.com>",
+  "inputs":[
+    {
+      "name": "fileName",
+      "type": "string",
+      "required":"true"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "created",
+      "type": "boolean"
+    }
+  ]
+}
