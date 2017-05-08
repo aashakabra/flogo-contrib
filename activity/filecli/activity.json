@@ -4,7 +4,6 @@
   "ref": "github.com/aashakabra/flogo-contrib/activity/filecli",
   "type": "flogo:activity",
   "description": "Through cli - fileCreate",
-  "homepage": "https://github.com/aashakabra/flogo-contrib/tree/master/activity/filecli",
   "author": "Asha <akabra@tibco.com>",
   "inputs":[
     {
