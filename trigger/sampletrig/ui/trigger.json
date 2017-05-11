@@ -1,0 +1,20 @@
+{
+  "name": "sampletrig",
+  "version": "0.0.1",
+  "type": "flogo:sample trigger",
+  "description": "Asha - Sample Trigger",
+  "author": "Asha K<akabra@tibco.com>",
+  "settings":[
+    {
+      "name": "FileDir",
+      "type": "string",
+	    "required": "true"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "found",
+      "type": "boolean"
+    }
+  ]
+}
