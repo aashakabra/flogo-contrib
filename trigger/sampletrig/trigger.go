@@ -1,6 +1,11 @@
 package sampletrig
 
 import (
+	"context"
+	"fmt"
+	"os"
+	"time"
+
 	"github.com/TIBCOSoftware/flogo-lib/core/action"
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 )
@@ -12,14 +17,17 @@ type MyTrigger struct {
 	config   *trigger.Config
 }
 
-func init() {
-	md := trigger.NewMetadata(jsonMetadata)
-	trigger.Register(&MyTrigger{metadata: md})
-}
-
 // Init implements trigger.Trigger.Init
 func (t *MyTrigger) Init(config *trigger.Config, runner action.Runner) {
-	t.config = config
+	if t.config.Settings == nil {
+		panic(fmt.Sprintf("No Settings found for trigger '%s'", t.config.Id))
+	}
+
+	if _, ok := t.config.Settings["FileDir"]; !ok {
+		panic(fmt.Sprintf("No FileDir found for trigger '%s' in settings", t.config.Id))
+	}
+
+	//t.config = config
 	t.runner = runner
 }
 
@@ -30,8 +38,32 @@ func (t *MyTrigger) Metadata() *trigger.Metadata {
 
 // Start implements trigger.Trigger.Start
 func (t *MyTrigger) Start() error {
-	// start the trigger
+	dir := ":" + t.config.GetSetting("FileDir")
+	fmt.Println("Directory to scan is ", dir)
+	scan(dir)
+
+	handlers := t.config.Handlers
+	for _, handler := range handlers {
+		act := action.Get(handler.ActionId)
+		_, _, err := t.runner.Run(context.Background(), act, handler.ActionId, nil)
+		if err != nil {
+			panic(err)
+		}
+
+	}
 	return nil
+}
+
+func scan(dir string) {
+	for {
+		_, err := os.Stat(dir)
+		if err == nil {
+			fmt.Println("Success")
+			break
+		}
+		time.Sleep(2 * time.Second)
+		fmt.Println("Asha")
+	}
 }
 
 // Stop implements trigger.Trigger.Start

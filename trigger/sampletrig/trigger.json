@@ -2,6 +2,7 @@
   "name": "sampletrig",
   "version": "0.0.1",
   "type": "flogo:sample trigger",
+  "ref": "github.com/aashakabra/flogo-contrib/trigger/sampletrig",
   "description": "Asha - Sample Trigger",
   "author": "Asha K<akabra@tibco.com>",
   "settings":[
