@@ -1,0 +1,29 @@
+{
+  "name": "fileTrigger",
+  "version": "0.0.1",
+  "type": "flogo:trigger",
+  "description": "Asha - File trigger ",
+  "ref": "github.com/aashakabra/flogo-contrib/trigger/fileTrigger",
+  "author": "Asha",
+  "settings":[
+    {
+      "name": "fileDir",
+      "type": "string",
+      "required": "true"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "output",
+      "type": "string"
+    }
+  ],
+  "handler": {
+    "settings": [
+      {
+        "name": "handler_setting",
+        "type": "string"
+      }
+    ]
+  }
+}
