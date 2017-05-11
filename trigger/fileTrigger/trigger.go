@@ -52,7 +52,7 @@ func (t *MyTrigger) Metadata() *trigger.Metadata {
 // Start implements trigger.Trigger.Start
 func (t *MyTrigger) Start() error {
 	// start the trigger
-	dir := ":" + t.config.GetSetting("FileDir")
+	dir := ":" + t.config.GetSetting("fileDir")
 	fmt.Println("Directory to scan is ", dir)
 	scan(dir)
 
